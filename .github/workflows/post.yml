@@ -1,13 +1,20 @@
-
 name: curio
 on:
   schedule:
     - cron: "7 */3 * * *"
   workflow_dispatch:
     inputs:
+      mode:
+        description: "test = build a video but do NOT publish it (download it to check) | publish = make and schedule a real video"
+        type: choice
+        options:
+          - test
+          - publish
+        default: test
       force:
-        description: "1 = ignore the queue limit"
-        default: "0"
+        description: "publish only: add a video even if the queue is full"
+        type: boolean
+        default: false
 
 jobs:
   make:
@@ -27,7 +34,35 @@ jobs:
         run: sudo apt-get update -y && sudo apt-get install -y ffmpeg fonts-dejavu-core
       - name: python packages
         run: pip install numpy pillow requests edge-tts gTTS google-api-python-client google-auth
-      - name: make and schedule one video
+
+      - name: TEST - check keys
+        if: inputs.mode == 'test'
+        continue-on-error: true
+        run: python main.py check
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+      - name: TEST - build a video without publishing
+        if: inputs.mode == 'test'
+        run: python main.py --dry
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      - name: TEST - save the video so you can download it
+        if: inputs.mode == 'test'
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-video
+          path: |
+            out/video.mp4
+            out/thumb.jpg
+          retention-days: 3
+
+      - name: PUBLISH - make and schedule one video
+        if: inputs.mode != 'test'
         run: python main.py
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -35,9 +70,9 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
-          FORCE: ${{ github.event.inputs.force }}
-      - name: save state
-        if: always()
+          FORCE: ${{ inputs.force && '1' || '0' }}
+      - name: PUBLISH - save state
+        if: always() && inputs.mode != 'test'
         run: |
           git config user.name "bot"
           git config user.email "bot@users.noreply.github.com"
