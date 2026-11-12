@@ -1,0 +1,25 @@
+name: cleanup
+on:
+  workflow_dispatch:
+permissions:
+  actions: write
+  contents: read
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: delete all old runs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          CURRENT: ${{ github.run_id }}
+        run: |
+          for round in 1 2 3; do
+            gh api --paginate "repos/$REPO/actions/runs?per_page=100" --jq '.workflow_runs[].id' > ids.txt
+            [ -s ids.txt ] || break
+            while read -r id; do
+              [ "$id" = "$CURRENT" ] && continue
+              gh api -X DELETE "repos/$REPO/actions/runs/$id" --silent || true
+            done < ids.txt
+          done
+          echo "done"
