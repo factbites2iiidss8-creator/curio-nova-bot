@@ -19,7 +19,7 @@ on:
 jobs:
   make:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     permissions:
       contents: write
     concurrency:
@@ -30,6 +30,7 @@ jobs:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
       PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+      POLLINATIONS_TOKEN: ${{ secrets.POLLINATIONS_TOKEN }}
       YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
       YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
       YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
@@ -41,9 +42,14 @@ jobs:
       - name: system packages
         run: sudo apt-get update -y && sudo apt-get install -y ffmpeg fonts-dejavu-core
       - name: python packages
-        run: pip install numpy pillow requests edge-tts gTTS google-api-python-client google-auth
+        run: pip install numpy pillow requests edge-tts gTTS kokoro-onnx google-api-python-client google-auth
+      - name: keep the Kokoro voice files between runs
+        uses: actions/cache@v4
+        with:
+          path: models
+          key: kokoro-v1.0
 
-      - name: TEST - check keys
+      - name: TEST - check keys, voice and logo
         if: inputs.mode == 'test'
         continue-on-error: true
         run: python main.py check
