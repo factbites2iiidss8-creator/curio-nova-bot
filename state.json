@@ -20,12 +20,20 @@
    "id": "x4Fun_kO8I8",
    "at": "2026-11-14T15:04:00Z",
    "theme": "fantasy"
+  },
+  {
+   "topic": "Lunar Rust",
+   "title": "Why the Moon is Secretly Rusting",
+   "id": "aBbfZQZcTvM",
+   "at": "2026-11-15T15:05:00Z",
+   "theme": "space"
   }
  ],
  "scheduled": [
   "2026-11-12T17:04:00Z",
   "2026-11-13T16:56:00Z",
-  "2026-11-14T15:04:00Z"
+  "2026-11-14T15:04:00Z",
+  "2026-11-15T15:05:00Z"
  ],
  "log": [
   {
@@ -42,6 +50,11 @@
    "t": "2026-11-13T01:58:05Z",
    "id": "x4Fun_kO8I8",
    "title": "An Ocean 400 Miles Underground Contains 3X Earth's Water"
+  },
+  {
+   "t": "2026-11-13T11:11:57Z",
+   "id": "aBbfZQZcTvM",
+   "title": "Why the Moon is Secretly Rusting"
   }
  ]
 }
