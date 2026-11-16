@@ -41,14 +41,20 @@
    "id": "uC9q2WKffZY",
    "at": "2026-11-17T16:57:00Z",
    "theme": "space"
+  },
+  {
+   "topic": "Hoover Dam Concrete Cooling",
+   "title": "The Ice System That Saved a Skyscraper of Concrete",
+   "id": "-Ys-g3BPTdQ",
+   "at": "2026-11-18T16:57:00Z",
+   "theme": "engineering"
   }
  ],
  "scheduled": [
-  "2026-11-13T16:56:00Z",
-  "2026-11-14T15:04:00Z",
   "2026-11-15T15:05:00Z",
   "2026-11-16T17:00:00Z",
-  "2026-11-17T16:57:00Z"
+  "2026-11-17T16:57:00Z",
+  "2026-11-18T16:57:00Z"
  ],
  "log": [
   {
@@ -80,6 +86,11 @@
    "t": "2026-11-15T16:31:37Z",
    "id": "uC9q2WKffZY",
    "title": "The Largest Ocean in the Universe Isn't on a Planet"
+  },
+  {
+   "t": "2026-11-16T19:45:11Z",
+   "id": "-Ys-g3BPTdQ",
+   "title": "The Ice System That Saved a Skyscraper of Concrete"
   }
  ]
 }
