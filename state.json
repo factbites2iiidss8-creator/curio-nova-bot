@@ -55,13 +55,21 @@
    "id": "157Q8-MjyNk",
    "at": "2026-11-19T16:55:00Z",
    "theme": "body"
+  },
+  {
+   "topic": "Diesel engines have no spark plugs",
+   "title": "Why Big Trucks Need No Spark Plugs",
+   "id": "At2fXaZNI3E",
+   "at": "2026-11-20T17:01:00Z",
+   "theme": "industry"
   }
  ],
  "scheduled": [
   "2026-11-16T17:00:00Z",
   "2026-11-17T16:57:00Z",
   "2026-11-18T16:57:00Z",
-  "2026-11-19T16:55:00Z"
+  "2026-11-19T16:55:00Z",
+  "2026-11-20T17:01:00Z"
  ],
  "log": [
   {
@@ -103,6 +111,11 @@
    "t": "2026-11-17T16:15:13Z",
    "id": "157Q8-MjyNk",
    "title": "Your Heart Never Takes a Day Off"
+  },
+  {
+   "t": "2026-11-18T11:54:48Z",
+   "id": "At2fXaZNI3E",
+   "title": "Why Big Trucks Need No Spark Plugs"
   }
  ]
 }
