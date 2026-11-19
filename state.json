@@ -62,14 +62,21 @@
    "id": "At2fXaZNI3E",
    "at": "2026-11-20T17:01:00Z",
    "theme": "industry"
+  },
+  {
+   "topic": "All gold ever mined as one cube",
+   "title": "All the Gold Ever Mined Fits in One Cube",
+   "id": "TxlhBbnA9qI",
+   "at": "2026-11-21T15:00:00Z",
+   "theme": "fantasy"
   }
  ],
  "scheduled": [
-  "2026-11-16T17:00:00Z",
   "2026-11-17T16:57:00Z",
   "2026-11-18T16:57:00Z",
   "2026-11-19T16:55:00Z",
-  "2026-11-20T17:01:00Z"
+  "2026-11-20T17:01:00Z",
+  "2026-11-21T15:00:00Z"
  ],
  "log": [
   {
@@ -116,6 +123,11 @@
    "t": "2026-11-18T11:54:48Z",
    "id": "At2fXaZNI3E",
    "title": "Why Big Trucks Need No Spark Plugs"
+  },
+  {
+   "t": "2026-11-19T12:14:09Z",
+   "id": "TxlhBbnA9qI",
+   "title": "All the Gold Ever Mined Fits in One Cube"
   }
  ]
 }
