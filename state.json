@@ -118,13 +118,21 @@
    "id": "szV_2yvu9sM",
    "at": "2026-11-28T14:55:00Z",
    "theme": "fantasy"
+  },
+  {
+   "topic": "Black Hole Sun Gravity",
+   "title": "Black hole facts that prove our Sun won't swallow Earth",
+   "id": "5TP6L_tl-rY",
+   "at": "2026-11-29T14:59:00Z",
+   "theme": "space"
   }
  ],
  "scheduled": [
   "2026-11-25T16:56:00Z",
   "2026-11-26T16:59:00Z",
   "2026-11-27T17:01:00Z",
-  "2026-11-28T14:55:00Z"
+  "2026-11-28T14:55:00Z",
+  "2026-11-29T14:59:00Z"
  ],
  "log": [
   {
@@ -211,6 +219,11 @@
    "t": "2026-11-26T17:07:01Z",
    "id": "szV_2yvu9sM",
    "title": "Your Body Makes Millions of Cells Every Second"
+  },
+  {
+   "t": "2026-11-27T12:19:03Z",
+   "id": "5TP6L_tl-rY",
+   "title": "Black hole facts that prove our Sun won't swallow Earth"
   }
  ]
 }
