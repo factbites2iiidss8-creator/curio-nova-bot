@@ -125,14 +125,21 @@
    "id": "5TP6L_tl-rY",
    "at": "2026-11-29T14:59:00Z",
    "theme": "space"
+  },
+  {
+   "topic": "Red blood cells made every second",
+   "title": "Your Body Makes Millions of Cells Every Second",
+   "id": "wKmgAiwhf38",
+   "at": "2026-11-30T17:03:00Z",
+   "theme": "fantasy"
   }
  ],
  "scheduled": [
-  "2026-11-25T16:56:00Z",
   "2026-11-26T16:59:00Z",
   "2026-11-27T17:01:00Z",
   "2026-11-28T14:55:00Z",
-  "2026-11-29T14:59:00Z"
+  "2026-11-29T14:59:00Z",
+  "2026-11-30T17:03:00Z"
  ],
  "log": [
   {
@@ -224,6 +231,21 @@
    "t": "2026-11-27T12:19:03Z",
    "id": "5TP6L_tl-rY",
    "title": "Black hole facts that prove our Sun won't swallow Earth"
+  },
+  {
+   "t": "2026-11-28T15:36:23Z",
+   "id": "wKmgAiwhf38",
+   "title": "Your Body Makes Millions of Cells Every Second"
   }
- ]
+ ],
+ "gfx_hist": [
+  "kinetic_text:",
+  "flow:STEP BY STEP",
+  "kinetic_text:",
+  "kinetic_text:",
+  "kinetic_text:",
+  "flow:STEP BY STEP",
+  "kinetic_text:"
+ ],
+ "gfx_bg": "blueprint"
 }
